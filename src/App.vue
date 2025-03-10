@@ -21,14 +21,15 @@ function addImage() {
   </div>
   <div class="container">
     <h1>Galerie d'Images</h1>
-    <div>
+    <div class="containerInput">
       <input
           type="text"
+          class="inputUrl"
           v-model="newImageUrl"
           placeholder="Entrez l'URL d'une image"
           @keyup.enter="addImage"
       >
-      <button @click="addImage" :disabled="isButtonDisabled">Ajouter</button>
+      <button @click="addImage" class="boutonAjouter" :disabled="isButtonDisabled">Ajouter</button>
     </div>
   </div>
 
@@ -47,7 +48,6 @@ function addImage() {
       <h1 v-if="totalImages === 0">Aucune image ajoutée !!!</h1>
     </div>
   </div>
-
 </template>
 
 <style scoped>
@@ -94,5 +94,27 @@ function addImage() {
   cursor: pointer;
   border-radius: 10px;
 }
+.boutonAjouter{
+  background-color: green;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.inputUrl{
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid black;
 
+  margin-top: 10px;
+}
+.containerInput{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 </style>
