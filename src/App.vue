@@ -16,6 +16,9 @@ function addImage() {
 </script>
 
 <template>
+  <div id="app">
+
+  </div>
   <div class="container">
     <h1>Galerie d'Images</h1>
     <div>
@@ -48,6 +51,7 @@ function addImage() {
 </template>
 
 <style scoped>
+
 .container {
   display: flex;
   flex-direction: column;
@@ -90,4 +94,5 @@ function addImage() {
   cursor: pointer;
   border-radius: 10px;
 }
+
 </style>
