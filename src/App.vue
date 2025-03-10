@@ -3,7 +3,9 @@ import {computed, ref} from "vue";
 
 const newImageUrl = ref("");
 const images = ref(["https://images.radio-canada.ca/q_auto,w_1250/v1/ici-info/16x9/rick-astley-videoclip-never-gonna-give-you-up.png"]);
-const isButtonDisabled = computed(() => !newImageUrl.value.trim());
+
+const isButtonDisabled = computed(() => !newImageUrl.value.trim() || !(newImageUrl.value.startsWith("http://") || newImageUrl.value.startsWith("https://")));
+//startwith est une méthode JS comme trim (note à moi même approfondir les méthodes JS)
 const totalImages = computed(() => images.value.length);
 
 function addImage() {
@@ -23,10 +25,8 @@ function addImage() {
           type="text"
           class="inputUrl"
           v-model="newImageUrl"
-          placeholder="Entrez l'URL d'une image"
-          @keyup.enter="addImage"
-      >
-      <button @click="addImage" class="boutonAjouter" :disabled="isButtonDisabled">Ajouter</button>
+          placeholder="Entrez l'URL d'une nouvelle image">
+      <button @click="addImage" class="boutonAjouter" :disabled="isButtonDisabled">Ajouter un lien d'image</button>
     </div>
   </div>
 
@@ -40,9 +40,9 @@ function addImage() {
     <div>
       <div v-for="(image, index) in images" :key="index" class="image-container">
         <img :src="image" alt="image" class="imageTaille"/>
-        <button class="boutonSupprimer" @click="images.splice(index, 1)">Supprimer</button>
+        <button class="boutonSupprimer" @click="images.splice(index, 1)">Supprimer l'image</button>
       </div>
-      <h1 v-if="totalImages === 0">Aucune image ajoutée !!!</h1>
+      <h1 v-if="totalImages === 0">Aucune image d'ajoutée !!!</h1>
     </div>
   </div>
 </template>
