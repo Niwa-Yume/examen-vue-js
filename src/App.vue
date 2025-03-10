@@ -16,9 +16,6 @@ function addImage() {
 </script>
 
 <template>
-  <div id="app">
-
-  </div>
   <div class="container">
     <h1>Galerie d'Images</h1>
     <div class="containerInput">
@@ -59,6 +56,9 @@ function addImage() {
   align-items: center;
   margin-top: 20px;
 }
+.container h1{
+  color:white;
+}
 .image-container{
   display: flex;
   flex-direction: column;
@@ -69,7 +69,6 @@ function addImage() {
 .gallery {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .stats {
@@ -77,7 +76,8 @@ function addImage() {
   font-size: 1.5em;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
+  margin-top: 30px;
+  color: white;
 }
 
 .imageTaille {
@@ -91,27 +91,21 @@ function addImage() {
   border: none;
   padding: 10px 20px;
   margin-top: 10px;
-  cursor: pointer;
   border-radius: 10px;
 }
 .boutonAjouter{
   background-color: green;
   color: white;
-  border: none;
   padding: 10px 20px;
   margin-top: 10px;
-  cursor: pointer;
   border-radius: 10px;
 }
 .inputUrl{
-  margin-top: 10px;
   padding: 10px 20px;
   border-radius: 10px;
-  border: 1px solid black;
 }
 .containerInput{
   display: flex;
   flex-direction: column;
-
 }
 </style>
